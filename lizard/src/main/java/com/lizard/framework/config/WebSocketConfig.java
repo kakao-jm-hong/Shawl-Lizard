@@ -1,14 +1,23 @@
 package com.lizard.framework.config;
 
 import com.lizard.framework.handler.SocketHandler;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 
+
+@Configuration
+@EnableWebSocket
+@RequiredArgsConstructor
 public class WebSocketConfig implements WebSocketConfigurer {
+
+    private final SocketHandler socketHandler;
+
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(new SocketHandler(),"test")
-                .setAllowedOrigins("*")
-                .withSockJS();
+        registry.addHandler(socketHandler,"ws/locate")
+                .setAllowedOrigins("*");
     }
 }

@@ -1,4 +1,4 @@
-package com.shawl.lizard.framework.config;
+package com.lizard.framework.config;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
