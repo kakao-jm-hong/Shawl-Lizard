@@ -1,26 +1,43 @@
+#spring:
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ant_path_matcher
+#  datasource:
+#    url: "jdbc:mysql://localhost:3001/shawl?autoReconnect=true"
+#    username: root
+#    password: 1234
+#    driver-class-name: "com.mysql.cj.jdbc.Driver"
+#    hikari:
+#      auto-commit: false
+#      connection-test-query: SELECT 1
+#      minimum-idle: 10
+#      maximum-pool-size: 50
+#      transaction-isolation: TRANSACTION_READ_UNCOMMITTED
+#      pool-name: pool-jiniworld_demo
+#  jpa:
+#    database-platform: org.hibernate.dialect.MariaDB103Dialect
+#    properties:
+#      hibernate:
+#        format_sql: true
+#        hbm2ddl.auto: create
+#        implicit_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+#        physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+#    open-in-view: false
+#    show-sql: true
+
 spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
   datasource:
-    url: "jdbc:mysql://localhost:3001/shawl?autoReconnect=true"
-    username: root
-    password: 1234
-    driver-class-name: "com.mysql.cj.jdbc.Driver"
-    hikari:
-      auto-commit: false
-      connection-test-query: SELECT 1
-      minimum-idle: 10
-      maximum-pool-size: 50
-      transaction-isolation: TRANSACTION_READ_UNCOMMITTED
-      pool-name: pool-jiniworld_demo
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
   jpa:
-    database-platform: org.hibernate.dialect.MariaDB103Dialect
+    database-platform: org.hibernate.dialect.H2Dialect
     properties:
       hibernate:
         format_sql: true
         hbm2ddl.auto: create
-        implicit_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
-        physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
     open-in-view: false
-    show-sql: true

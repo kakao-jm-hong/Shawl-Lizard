@@ -1,5 +1,5 @@
 <template>
-  <div>플로깅 메인페이지</div>
+  <div>설정끝 옴뇸뇸 호롤롤로</div>
 </template>
 
 <script>
