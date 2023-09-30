@@ -1,20 +1,29 @@
 import HomePage from "@/domain/base/page/HomePage";
 import SignUpPage from "@/domain/base/page/SignUpPage";
+import BaseMain from "@/domain/base/BaseMain";
 const routes = [
   {
     path: '/base',
-    component: HomePage,
-    meta: {
-      title: '기본 뼈대페이지'
-    }
+    redirect: '/base/home',
+    component: BaseMain,
+    children: [
+      {
+        path: 'home',
+        component: HomePage,
+        meta: {
+          title: '메인'
+        }
+      },
+      {
+        path: 'signUp',
+        component: SignUpPage,
+        meta: {
+          title: '회원가입'
+        }
+      }
+    ]
   },
-  {
-    path: '/base/signUp',
-    component: SignUpPage,
-    meta: {
-      title: '뼈대 로그인페이지'
-    }
-  },
+
 ];
 
 export default routes;
