@@ -1,0 +1,59 @@
+.item {
+  position: relative;
+}
+.item + .item {
+  margin-left: 0.15rem;
+}
+.tab {
+  display: none;
+  opacity: 1;
+  pointer-events: initial;
+  transform: translateX(-50%) translateY(0);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 152px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 4px;
+  transition: opacity .2s, transform .1s;
+  background: #454c55;
+
+  .tab-li {
+    display: block;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    height: 2.13em;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 2.13;
+    color: #fff;
+  }
+}
+
+.item:hover, .item:focus {
+  .tab {
+    display: block;
+  }
+}
+
+.tabName {
+  display: inline-block;
+  height: 64px;
+  padding-left: 1em;
+  line-height: 64px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.shape {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  width: 10px;
+  height: 20px;
+  margin-left: 4px;
+  vertical-align: middle;
+  background: url("@/images/arr_gnb.svg") center center no-repeat;
+}
