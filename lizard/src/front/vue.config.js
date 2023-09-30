@@ -8,3 +8,4 @@ module.exports = defineConfig({
     proxy: 'http://localhost:8080'
   },
 });
+

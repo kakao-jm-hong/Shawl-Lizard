@@ -1,10 +1,12 @@
 <template>
-  <div>설정끝 옴뇸뇸 호롤롤로</div>
+<div>
+  <h1>Index Page</h1>
+</div>
 </template>
 
 <script>
 export default {
-  name: "MainPage"
+  name: "IndexPage"
 }
 </script>
 

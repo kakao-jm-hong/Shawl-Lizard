@@ -1,10 +1,18 @@
-import MainPage from "@/page/MainPage";
+import HomePage from "@/domain/base/page/HomePage";
+import IndexPage from "@/IndexPage";
 const routes = [
     {
         path: '/',
-        component: MainPage,
+        component: IndexPage,
         meta: {
-            title: '플로깅'
+            title: 'Index'
+        }
+    },
+    {
+        path: '/base',
+        component: HomePage,
+        meta: {
+            title: '기본 뼈대페이지'
         }
     },
 ];
