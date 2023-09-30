@@ -1,10 +1,16 @@
 <template>
   <div class="wrap">
     <div class="inner">
-      <div class="video">비디오 OR 그림<span class="blind">비디오 OR 그림</span></div>
+      <div class="video"><span class="blind">비디오 OR 그림</span></div>
       <div class="item">
-        <strong class="title">제목</strong>
-        <p class="text">설명</p>
+        <input class="input-wrap" type="email">
+        <input class="input-wrap" type="password">
+        <button class="login-button">로그인</button>
+        <div class="login-wrap">
+          <a class="login-wrap-item" href="">비밀번호 찾기</a>
+          <a class="login-wrap-item" href="">아이디 찾기</a>
+          <a class="login-wrap-item" href="">회원가입</a>
+        </div>
         <small class="sub">로그인 하실 경우 이용 약관과 개인정보 정책에 동의합니다</small>
         <a href="" class="facebook">Start With Facebook <img :src="FaceBook" class="icon_facebook" width="25" height="25"/></a>
         <a href="" class="kakao">Start With Kakao<img :src="Kakao" class="icon_kakao" width="35" height="35"/></a>
@@ -22,6 +28,7 @@ import Kakao from "@/images/login_kakao.svg"
 import Google from "@/images/login_google.svg"
 import Naver from "@/images/login_naver.svg"
 import Close from "@/images/icon_close_search.svg"
+import Roopi from "@/images/roopi.jpeg"
 export default {
   name: "LoginModal",
   data() {
@@ -30,7 +37,8 @@ export default {
       Kakao: Kakao,
       Google: Google,
       Naver: Naver,
-      Close: Close
+      Close: Close,
+      Roopi: Roopi,
     }
   },
   methods: {
