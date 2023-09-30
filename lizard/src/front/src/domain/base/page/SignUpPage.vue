@@ -80,7 +80,7 @@ export default {
         return;
       }
 
-      alert('회원가입 성공');
+      this.$router.push('/base/home');
     }
   }
 }

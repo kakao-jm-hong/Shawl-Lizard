@@ -1,6 +1,10 @@
 <template>
   <div>
-    <LoginModal></LoginModal>
+    <button @click="()=> this.showSignUp = true">로그인</button>
+
+
+
+    <LoginModal v-show="showSignUp" @close="()=>  this.showSignUp = false"></LoginModal>
   </div>
 </template>
 
@@ -8,7 +12,12 @@
 import LoginModal from "@/domain/base/components/Modal/LoginModal";
 export default {
   name: "HomePage",
-  components: {LoginModal}
+  components: {LoginModal},
+  data() {
+    return {
+      showSignUp: false,
+    }
+  }
 }
 </script>
 
