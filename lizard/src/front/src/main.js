@@ -3,6 +3,10 @@ import App from './App.vue';
 import VueRouter from 'vue-router';
 import routes from "@/routes";
 
+//setup
+import "./css/reset.css";
+import "./css/global.css";
+
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
@@ -13,7 +17,7 @@ const router = new VueRouter({
     routes
 });
 
-const DEFAULT_TITLE = '플로깅';
+const DEFAULT_TITLE = 'DEFAULT';
 
 router.afterEach((to) => {
     Vue.nextTick(() => {

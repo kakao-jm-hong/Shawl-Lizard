@@ -7,5 +7,17 @@ module.exports = defineConfig({
   devServer: {
     proxy: 'http://localhost:8080'
   },
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `@import "@/scss/utils.scss";`,
+      },
+      scss: {
+        additionalData: `@import "@/scss/utils.scss";`,
+      },
+    },
+  },
 });
+
+
 
