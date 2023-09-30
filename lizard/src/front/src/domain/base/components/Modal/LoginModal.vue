@@ -9,7 +9,7 @@
         <div class="login-wrap">
           <a class="login-wrap-item" href="">비밀번호 찾기</a>
           <a class="login-wrap-item" href="">아이디 찾기</a>
-          <a class="login-wrap-item" href="">회원가입</a>
+          <a class="login-wrap-item" href="/base/signUp">회원가입</a>
         </div>
         <small class="sub">로그인 하실 경우 이용 약관과 개인정보 정책에 동의합니다</small>
         <a href="" class="facebook">Start With Facebook <img :src="FaceBook" class="icon_facebook" width="25" height="25"/></a>
@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     closeButton() {
-      alert("close");
+      this.$emit('close');
     }
   }
 }

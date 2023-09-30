@@ -1,6 +1,8 @@
 package com.lizard.model.entity;
 
-import lombok.Builder;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,7 +14,9 @@ import javax.persistence.Id;
 @Setter
 public class Member {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(unique = true)
     private String memberId;
     private String password;
     private String nickname;

@@ -18,7 +18,7 @@ import java.util.Optional;
 @RestController
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/member")
+@RequestMapping("/member/v1")
 public class MemberController extends BaseController {
 
     private final MemberRepository memberRepository;
