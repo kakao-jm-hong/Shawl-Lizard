@@ -5,11 +5,12 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 
 import java.security.Key;
+import org.springframework.stereotype.Component;
 
 public class JwtUtils {
 
   private static final Key SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);
-  
+
   public static String generateToken(String subject) {
     return Jwts.builder()
         .setSubject(subject)

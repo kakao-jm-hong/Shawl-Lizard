@@ -3,6 +3,8 @@ package com.lizard.controller;
 import com.lizard.model.dto.MemberDto;
 import com.lizard.model.entity.Member;
 import com.lizard.model.result.BaseResult;
+import com.lizard.model.result.member.MemberResult;
+import com.lizard.model.result.member.ValidResult;
 import com.lizard.repository.MemberRepository;
 import com.lizard.service.MemberService;
 import com.sun.istack.NotNull;
@@ -33,17 +35,21 @@ public class MemberController extends BaseController {
     public ResponseEntity<BaseResult> login(@RequestBody LoginRequest loginRequest) {
         MemberDto memberDto = loginRequest.toMemberDto();
 
-        String secretKey;
+        MemberResult result;
         try {
-            secretKey = memberService.loginCheck(memberDto);
+            result = memberService.loginCheck(memberDto);
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.ok().body(BaseResult.isFail("로그인에 실패하였습니다."));
         }
 
-        //TODO: cookie 저장.
+        return ResponseEntity.ok().body(result.isSuccess("로그인에 성공하였습니다."));
+    }
 
-        return ResponseEntity.ok().body(BaseResult.isSuccess("로그인에 성공하였습니다.").add("shawl_key", secretKey));
+    @GetMapping("/token-valid")
+    public ResponseEntity<BaseResult> tokenValid(@RequestParam("token") String token) {
+        ValidResult validResult = memberService.validUser(token);
+        return ResponseEntity.ok().body(validResult);
     }
 
     /**
