@@ -1,6 +1,6 @@
 export const baseStore = {
   state: {
-      token: 'jwtToken',
+      token: null,
       nickName: 'HongJeongMin',
       image: ''
   },
@@ -20,8 +20,8 @@ export const baseStore = {
   },
   getters: {
     isLogin(state) {
-      console.info(state)
-      return true;
+      console.info(state.token);
+      return state.token != null && state.token !='';
     }
   }
 };

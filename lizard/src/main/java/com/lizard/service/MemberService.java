@@ -28,7 +28,6 @@ public class MemberService {
      */
     public Member createMember(MemberDto memberDto) {
         Member member = memberDto.toEntity();
-        member.setPassword(passwordEncoder.encode(member.getPassword()));
 
         Member createMember = memberRepository.save(member);
         log.info("member create, member = {}", member);
@@ -43,8 +42,8 @@ public class MemberService {
      */
     public MemberResult loginCheck(MemberDto memberDto) throws Exception {
         String memberId = memberDto.getMemberId();
-        String password = passwordEncoder.encode(memberDto.getPassword());
-        Optional<Member> member = memberRepository.findByMemberIdAndPassword(memberDto.getMemberId(), password);
+        String password = memberDto.getPassword();
+        Optional<Member> member = memberRepository.findByMemberIdAndPassword(memberId, password);
         if(member.isPresent()) {
             return MemberResult.builder()
                 .token(JwtUtils.generateToken(memberId))

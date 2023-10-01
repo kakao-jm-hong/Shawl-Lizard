@@ -43,7 +43,7 @@ public class MemberController extends BaseController {
             return ResponseEntity.ok().body(BaseResult.isFail("로그인에 실패하였습니다."));
         }
 
-        return ResponseEntity.ok().body(result.isSuccess("로그인에 성공하였습니다."));
+        return ResponseEntity.ok().body(result));
     }
 
     @GetMapping("/token-valid")
@@ -131,7 +131,7 @@ public class MemberController extends BaseController {
 
     @Getter
     @Setter
-    private class LoginRequest {
+    static class LoginRequest {
         @NotNull
         String memberId;
         @NotNull
