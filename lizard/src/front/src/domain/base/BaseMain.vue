@@ -1,9 +1,14 @@
 <template>
   <div>
+    <section class="login-section">
+      <div class="login-inner">
+        <button @click="()=> this.showSignUp = true">로그인</button>
+        <button @click="()=> this.showHomeMyLayer = true">{{nickName}}</button>
+      </div>
+    </section>
     <NavBar></NavBar>
     <LoginModal v-show="showSignUp" @close="()=>  this.showSignUp = false"></LoginModal>
     <HomeMyLayer v-show="showHomeMyLayer" @close="()=>  this.showHomeMyLayer = false"></HomeMyLayer>
-    <button @click="()=> this.showSignUp = true">로그인</button>
     <router-view></router-view>
   </div>
 </template>
@@ -19,11 +24,13 @@ export default {
     return {
       showSignUp: false,
       showHomeMyLayer: false,
+
+      nickName: 'hongJeongmin'
     }
   }
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+@import "./BaseMain.scss";
 </style>
