@@ -19,9 +19,9 @@ export default {
       default: 'tab'
     },
     items: {
-      default: [
-
-      ]
+      default: function() {
+        return [];
+      }
     }
   }
 }

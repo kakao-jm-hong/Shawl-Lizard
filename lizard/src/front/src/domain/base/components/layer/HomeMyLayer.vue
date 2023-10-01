@@ -12,7 +12,7 @@
       </div>
       <div class="list">
         <a href="#" class="join"> 게시글 <span class="number">3</span></a>
-        <button type="button" @click="logout" class="logout">로그아웃</button>
+        <button type="button" @click="logoutClick" class="logout">로그아웃</button>
       </div>
       <button class="cancel" @click="closeClick"><img :src="Close" width="25" height="25" /></button>
     </div>
@@ -47,6 +47,9 @@ export default {
   methods: {
     closeClick() {
       this.$emit('close');
+    },
+    logoutClick() {
+      this.$emit('logout');
     }
   }
 }

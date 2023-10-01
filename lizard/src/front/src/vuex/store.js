@@ -1,1 +1,3 @@
-export const base = import("./baseStore")
+import BaseStore from "@/vuex/baseStore";
+
+export const base = BaseStore;

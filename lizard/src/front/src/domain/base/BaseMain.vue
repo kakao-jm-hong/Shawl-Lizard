@@ -2,8 +2,8 @@
   <div>
     <section class="login-section">
       <div class="login-inner">
-        <button @click="()=> this.showSignUp = true">로그인</button>
-        <button @click="()=> this.showHomeMyLayer = true">{{nickName}}</button>
+        <button v-show="!$store.getters.isLogin" @click="()=> this.showSignUp = true">로그인</button>
+        <button v-show="$store.getters.isLogin" @click="()=> this.showHomeMyLayer = true">{{$store.state.base.nickName}}</button>
       </div>
     </section>
     <NavBar></NavBar>
@@ -24,8 +24,13 @@ export default {
     return {
       showSignUp: false,
       showHomeMyLayer: false,
-
-      nickName: 'hongJeongmin'
+    }
+  },
+  created() {
+    this.init();
+  },
+  methods: {
+    init() {
     }
   }
 }

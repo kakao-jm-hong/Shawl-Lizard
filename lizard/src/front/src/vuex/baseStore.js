@@ -1,19 +1,28 @@
 export const baseStore = {
   state: {
-    user: {
-      token: null,
-      nickName: null,
-    },
+      token: 'jwtToken',
+      nickName: 'HongJeongMin',
+      image: ''
   },
   mutations: {
-    setUser(state, user) {
-      return state.user = user;
+    setToken(state, token) {
+      return state.token = token;
+    },
+    setNickName(state, nickName) {
+      return state.nickName = nickName;
+    },
+    setImage(state, image) {
+      return state.image = image;
     },
   },
   actions: {
-    setUser({commit}, user) {
-      commit('setUser', user);
-    },
+
+  },
+  getters: {
+    isLogin(state) {
+      console.info(state)
+      return true;
+    }
   }
 };
 
